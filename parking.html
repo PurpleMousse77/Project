@@ -1,0 +1,106 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Parking
+{% endblock %}
+
+{% block main %}
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<!-- Include Date Range Picker -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+
+<script>
+    $(document).ready(function(){
+        var date_input=$('input[name="date"]'); //our date input has the name "date"
+        var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+        date_input.datepicker({
+            format: 'mm/dd/yyyy',
+            container: container,
+            todayHighlight: true,
+            autoclose: true
+        })
+    })
+</script>
+<h3>Parking Services</h3>
+<br>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+<h4>Appoinment</h4>
+<br>
+<pre>
+Schedule to shine
+your house like a Pro.
+Get the best cleaners
+at your service
+</pre>
+<br>
+<pre>
+Your first service will
+be FREE of cost.
+</pre>
+<br>
+<pre>
+<b>Services Hours:</b>
+Monday-Friday: 10AM - 4PM
+Saturday-Sunday: CLOSED
+<b>Holidays</b>: CLOSED
+</pre>
+        </div>
+        <div class="col-sm">
+
+                <fieldset>
+                <form action="/parking" method="post">
+                    <strong>*</strong> <b>These fields are Mandatory.</b>
+                    <div class="row">
+                        <div class="form-group col-md-4">
+                          <label for="firstname">First Name *</label>
+                          <input type="text" class="form-control" id="firstname" placeholder="First Name" required>
+                        </div>
+                        <div class="form-group col-md-4">
+                          <label for="last">Last Name *</label>
+                          <input type="text" class="form-control mr-sm-2" id="last" placeholder="Last Name" required>
+                        </div>
+                    </div>
+                    <div class="form-group row col-xl-2">
+                            <label for="mail">E-Mail *</label>
+                            <input type="email" class="form-control" id="mail" placeholder="abc@xyz.com" required>
+                    </div>
+                    <div class="form-group row col-xl-2">
+                            <label for="number">Phone *</label>
+                            <input type="numeric" class="form-control" id="number" placeholder="123-456-7890" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="yn">Select services *</label>
+                        <select class="custom-select" class="form-control" id="yn" required>
+                            <option selected>Select</option>
+                            <option value="1">Parking Lot Painting & Refinishing.</option>
+                            <option value="2">Visitor's Spot.</option>
+                            <option value="3">Parking Spot to add vehical.</option>
+                        </select>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-4 col-sm-6 col-xs-12"> <!-- Date input -->
+                            <label class="control-label" for="date">Select Date</label>
+                            <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-xl-3">
+                            <label for="exampleFormControlTextarea1">Your Message</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="0" placeholder="Type your request.." required></textarea>
+                        </div>
+                    </div>
+                    <a href="/submit"><button type="submit" class="btn btn-primary">Schedule</button></a>
+
+                    </form>
+                </fieldset>
+        </div>
+</div>
+{% endblock %}
+

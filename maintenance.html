@@ -1,0 +1,120 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Maintenance
+{% endblock %}
+
+{% block main %}
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<!-- Include Date Range Picker -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+
+<script>
+    $(document).ready(function(){
+        var date_input=$('input[name="date"]'); //our date input has the name "date"
+        var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+        date_input.datepicker({
+            format: 'mm/dd/yyyy',
+            container: container,
+            todayHighlight: true,
+            autoclose: true
+        })
+    })
+    function greet()
+        {
+          let name = document.querySelector('#name').value;
+          alert('You have successfully schedule your appoinment.');
+        }
+</script>
+<h3>Maintenance Services</h3>
+<br>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+<h4>Appoinment</h4>
+<br>
+<pre>
+Schedule your appoinment today
+and get best maintenance
+service at your door.
+</pre>
+<br>
+<pre>
+Your first service would
+be FREE of cost.
+</pre>
+<br>
+<pre>
+<b>Services Hours:</b>
+Monday-Friday: 10:00AM-4:00PM
+Saturday-Sunday: CLOSED
+<b>Holidays</b>: CLOSED
+</pre>
+        </div>
+        <div class="col-sm">
+
+                <fieldset>
+                <form action="/maintenance" method="post">
+                    <strong>*</strong> <b>These fields are Mandatory.</b>
+                    <div class="row">
+                        <div class="form-group col-md-4">
+                          <label for="firstname">First Name *</label>
+                          <input type="text" class="form-control" id="firstname" placeholder="First Name" required>
+                        </div>
+                        <div class="form-group col-md-4">
+                          <label for="last">Last Name *</label>
+                          <input type="text" class="form-control mr-sm-2" id="last" placeholder="Last Name" required>
+                        </div>
+                    </div>
+                    <div class="form-group row col-xl-2">
+                            <label for="mail">E-Mail *</label>
+                            <input type="email" class="form-control" id="mail" placeholder="abc@xyz.com" required>
+                    </div>
+                    <div class="form-group row col-xl-2">
+                            <label for="number">Phone *</label>
+                            <input type="numeric" class="form-control" id="number" placeholder="123-456-7890" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="yn">Select services *</label>
+                        <select class="custom-select" class="form-control" id="yn" required>
+                            <option selected>Select</option>
+                            <option value="1">Check HVAC system filters.</option>
+                            <option value="2">Look for leaks around toilets and sinks.</option>
+                            <option value="3">Inspect grout and caulking.</option>
+                            <option value="4">Check kitchen vent hood filter.</option>
+                            <option value="5">Test smoke and carbon-monoxide detectors.</option>
+                            <option value="6">Stroll around outside.</option>
+                            <option value="7">Watch for ice dams.</option>
+                            <option value="8">Test your sump pump.</option>
+                            <option value="9">Close foundation vents.</option>
+                            <option value="10">Cover outdoor air-conditioning units.</option>
+                        </select>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-4 col-sm-6 col-xs-12"> <!-- Date input -->
+                            <label class="control-label" for="date">Select Date</label>
+                            <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-xl-3">
+                            <label for="exampleFormControlTextarea1">Your Message</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="0" placeholder="Type your request.." required></textarea>
+                        </div>
+                    </div>
+                    <a href="/submit"><button type="submit" class="btn btn-primary">Schedule</button></a>
+
+                    </form>
+                </fieldset>
+        </div>
+</div>
+<form onsubmit="greet(); return false;">
+        <input type="submit">
+        </form>
+{% endblock %}
+

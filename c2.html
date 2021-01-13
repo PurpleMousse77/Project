@@ -1,0 +1,86 @@
+
+{% extends "layout.html" %}
+
+
+{% block title %}
+    CONTACT
+{% endblock %}
+
+{% block main %}
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-3">
+				<div class="contact-info">
+					<img src="https://image.ibb.co/kUASdV/contact-image.png" alt="image"/>
+<h3>Contact Us</h3>
+<h6>We would love to hear from you !</h6>
+<h4>Information</h4>
+<pre>
+Care Residence Office
+1775 Willow Avenue., Suite 210
+Toronto ON, M9M 0E4
+</pre>
+<pre>
+E-mail: info@careresi.ca
+Tel: 416.747.7272
+Fax: 416.777.7557
+</pre>
+
+<pre>
+<b>Business Hours:</b>
+Monday-Friday: 9am-4pm
+Saturday-Sunday: CLOSED
+Holidays: CLOSED
+</pre>
+			</div>
+		</div>
+		<div class="col-sm">
+
+                <fieldset>
+                <form>
+                    <div class="row">
+                        <div class="form-group col-sm-2">
+                          <label for="firstname">First Name</label>
+                          <input type="text" class="form-control" id="firstname" placeholder="First Name">
+                        </div>
+                        <div class="form-group col-md-2">
+                          <label for="last">Last Name</label>
+                          <input type="text" class="form-control mr-sm-2" id="last" placeholder="Last Name">
+                        </div>
+                    </div>
+                    <div class="form-group row col-xl-2">
+                            <label for="mail">E-Mail</label>
+                            <input type="email" class="form-control" id="mail" placeholder="abc@xyz.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="yn">Are You Owner ?</label>
+                        <select class="custom-select" class="form-control" id="yn">
+                            <option selected>Select</option>
+                            <option value="y">Yes</option>
+                            <option value="n">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-xl-2">
+                            <label for="sub">Subject</label>
+                            <input type="text" class="form-control" id="sub" placeholder="In regards to..">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-xl-7">
+                            <label for="exampleFormControlTextarea1">Your Message</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="0" placeholder="Type your request.."></textarea>
+                        </div>
+                    </div>
+                    <a href="/submit"><button type="submit" class="btn btn-primary">Submit</button></a>
+
+                </form>
+                </fieldset>
+        </div>
+	</div>
+</div>
+{% endblock %}
